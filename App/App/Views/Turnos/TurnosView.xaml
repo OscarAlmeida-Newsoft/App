@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App.Views.Turnos.TurnosView"
+             xmlns:dxGrid="clr-namespace:DevExpress.Mobile.DataGrid;assembly=DevExpress.Mobile.Grid.v15.2"
+             xmlns:local="clr-namespace:App.Converters;assembly=App">
+  <ContentPage.Resources>
+    <ResourceDictionary>
+
+      <local:EstadoTurnoConverter x:Key="estadoTurnoConverter"/>
+    </ResourceDictionary>
+  </ContentPage.Resources>
+  
+  <StackLayout Spacing="20" Padding="20" VerticalOptions="Start">
+
+    <Button Text="Crear Turno"  x:Name="btnCrear" Clicked="OnCrearClicked"></Button>
+    <Entry Placeholder="Búsqueda por placa: " x:Name="txtPlaca"></Entry>
+    <Button Text="Buscar" Clicked="btnBuscar_Clicked" x:Name="btnBuscar"></Button>
+
+    <ListView x:Name="lvTurnos" HasUnevenRows="true">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            
+            <StackLayout Orientation="Vertical">
+              <StackLayout Orientation="Horizontal">
+                <Button CommandParameter="{Binding IdTurno}" Clicked="OnEditarClicked" Image="editar.png" BackgroundColor="Transparent">
+                  Editar
+                </Button>
+                <Button CommandParameter="{Binding IdTurno}" Clicked="OnEliminarClicked" Image="eliminar.png" BackgroundColor="Transparent">
+                </Button>
+              </StackLayout>
+              <StackLayout Orientation="Horizontal">                
+                <Label Text="Placa: " FontSize="20" FontAttributes="Bold" />
+                <Label Text="{Binding PlacaCabezote}" FontSize="20"></Label>
+                <Label Text="Trailer: " FontSize="20" FontAttributes="Bold"/>
+                <Label Text="{Binding PlacaTrailer}" FontSize="20"/>
+              </StackLayout>
+              <StackLayout Orientation="Horizontal">
+                <Label Text="Turno: "  FontSize="20" FontAttributes="Bold"/>
+                <Label Text="{Binding Turno}" FontSize="20"/>
+              </StackLayout>
+              <StackLayout Orientation="Horizontal">
+                <Label Text="Origen: " FontSize="17" FontAttributes="Bold"/>
+                <Label Text="{Binding DescripcionPuestoExpedicion}" FontSize="20"/>
+                <Label Text="Destino: " FontSize="17" FontAttributes="Bold"/>
+                <Label Text="{Binding Destino}" FontSize="20"/>
+              </StackLayout>
+              <StackLayout Orientation="Horizontal">
+                <Label Text="Estado: " FontSize="17" FontAttributes="Bold"/>
+                <Label Text="{Binding DescripcionEstado}" FontSize="20"/>                
+              </StackLayout>
+              <StackLayout Orientation="Vertical" IsVisible="{Binding Estado, Converter={StaticResource estadoTurnoConverter}">
+                <Label Text="Este vehículo aún no tiene turno asignado porque no está disponible para cargar. Cuando se encuentre disponible modifique el estado del vehículo usando el botón 'modificar' (lápiz) " TextColor="Red" FontSize="15">
+                  
+                </Label>
+                <Button CommandParameter="{Binding IdTurno}" Clicked="OnEditarClicked" Image="editar.png" BackgroundColor="Transparent">
+                  Editar
+                </Button>
+                
+              </StackLayout>
+              
+            </StackLayout>
+          </ViewCell>
+          <!--<TextCell Text="{Binding PlacaCabezote}" />-->
+        </DataTemplate>
+      </ListView.ItemTemplate>     
+    </ListView>
+    
+  <!--<dxGrid:GridControl x:Name="grid" AutoGenerateColumnsMode="None">
+    <dxGrid:GridControl.Columns>
+      
+      <dxGrid:TextColumn FieldName="PlacaCabezote" Caption="Placa" />
+      <dxGrid:TextColumn FieldName="Turno" Caption="Turno"/>
+      <dxGrid:TextColumn FieldName="PuestoExpedicion" Caption="Origen"/>
+      <dxGrid:TextColumn FieldName="Destino" Caption="Destino" />
+      <dxGrid:TextColumn FieldName="Estado" Caption="Estado" />
+      <dxGrid:TextColumn FieldName="PlacaTrailer" Caption="Trailer" />
+    </dxGrid:GridControl.Columns>
+  </dxGrid:GridControl>-->
+  </StackLayout>
+</ContentPage>

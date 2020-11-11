@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Generated with http://android-holo-colors.com -->
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <style name="TdmTheme" parent="@style/_TdmTheme">
+
+    <item name="android:textSelectHandleLeft">@drawable/tdmtheme_text_select_handle_left</item>
+    <item name="android:textSelectHandleRight">@drawable/tdmtheme_text_select_handle_right</item>
+    <item name="android:textSelectHandle">@drawable/tdmtheme_text_select_handle_middle</item>
+
+    <item name="android:actionBarStyle">@style/MyTheme.ActionBarStyle</item>
+    <item name="android:titleTextStyle">@style/MyTheme.ActionBar.TitleTextStyle</item>
+    <item name="android:background">@color/primary_dark</item>
+    <item name="android:textColor">@android:color/white</item>
+
+  </style>
+
+</resources>

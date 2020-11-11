@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App.Views.Bodega.BodegaView"
+             Title="Inicio Bodega">
+
+  <StackLayout Spacing="20" Padding="0" >
+    <!--<ActivityIndicator x:Name="activityIndicator"  />-->
+    <!--<StackLayout Orientation="Horizontal">
+      <Label FontSize="15">Transporte</Label>
+      <Label x:Name="lblNumeroViajeActivo" FontSize="15"></Label>
+    </StackLayout>
+    <StackLayout Orientation="Horizontal">
+      <Label FontSize="15">Ruta</Label>
+      <Label x:Name="lblRuta" FontSize="15"></Label>
+    </StackLayout>-->
+    <BoxView Color="#E6007E" WidthRequest="100" HeightRequest="2"></BoxView>
+    <Label HorizontalOptions="Center">Eventos Bodega</Label>
+    <ListView x:Name="lvMenuEventos" ItemSelected="OnSelectionEventoBodega">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+              <BoxView Color="Gray" HeightRequest="5" WidthRequest="5" VerticalOptions="Center"></BoxView>
+              <Label Text="{Binding NombreEvento}" TextColor="Black" FontSize="15" VerticalOptions="Center">  </Label>
+            </StackLayout>
+          </ViewCell>
+
+        </DataTemplate>
+      </ListView.ItemTemplate>
+
+    </ListView>
+
+    <!--<Button Text="Historial eventos" Clicked="btnEventosBodega_Clicked"></Button>-->
+
+  </StackLayout>
+
+  <!--<StackLayout Spacing="20" Padding="20"
+                        VerticalOptions="Center">
+    <Entry Placeholder="Número Entrega"
+           x:Name="txtNumeroEntrega"/>
+    
+    <Label x:Name="lblEstadoEntrega"></Label>
+    <Button Text="Recepción Bodega" Clicked="btnRecepBodegaClicked" x:Name="btnRecepBodega"/>
+    <Button Text="Despacho Bodega" x:Name="btnDespachoBodega"/>
+    <Label x:Name="lblVersion" HorizontalOptions="Center"></Label>
+  </StackLayout>-->
+  
+  <!--<Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />-->
+</ContentPage>

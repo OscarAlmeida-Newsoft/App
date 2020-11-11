@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App.Views.Almacenamiento.InventarioContenedor"
+             xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
+             xmlns:behavior="clr-namespace:App.Behaviors;assembly=App">
+  <ContentPage.Resources>
+        <ResourceDictionary>
+            <!--  this isn't working yet  -->
+            <DataTemplate x:Key="SugestionItemTemplate">
+                <ViewCell Height="60">
+                    <ViewCell.View>
+                        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                            <Label HorizontalOptions="Start"
+                                   Text="{Binding }"
+                                   VerticalOptions="Center" />
+                            
+                        </StackLayout>
+                    </ViewCell.View>
+                </ViewCell>
+            </DataTemplate>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+  <StackLayout Spacing="20" Padding="20" VerticalOptions="Start" x:Name="panel">
+    <Label Text="Número contenedor: " FontAttributes="Bold" />
+    <StackLayout>
+      <controls:AutoCompleteView x:Name="autocompleteContenedor" Placeholder="Digite # contenedor"
+                                   ShowSearchButton="False"/>          
+                                   <!--Suggestions="{Binding contenedoresEnPatioFiltrados,Mode=OneWay}"
+                                   SuggestionItemDataTemplate="{StaticResource SugestionItemTemplate}"
+                                   TextChanged="autocompleteContenedor_TextChanged"-->
+    </StackLayout>
+    <StackLayout Orientation="Horizontal">
+      <Entry Placeholder="Letras" Keyboard="Text" x:Name="txtLetrasContenedor" >
+        <Entry.Behaviors>
+          <behavior:MaxLengthValidator  MaxLength="3"/>
+          <behavior:TextValidator />
+        </Entry.Behaviors>
+
+      </Entry>
+      <Entry Keyboard="Numeric" WidthRequest="90" x:Name="txtNumeroContenedor">
+        <Entry.Behaviors>
+          <behavior:MaxLengthValidator  MaxLength="6"/>
+          <behavior:NumberValidator />
+        </Entry.Behaviors>
+      </Entry>
+      <Label Text=" - "></Label>
+      <Entry Keyboard="Numeric" WidthRequest="40" x:Name="txtDigitoContenedor">
+        <Entry.Behaviors>
+          <behavior:MaxLengthValidator  MaxLength="1" />
+        </Entry.Behaviors>
+      </Entry>
+    </StackLayout>
+    <StackLayout Orientation="Horizontal">
+      <Label Text="Tamaño"></Label>
+      <Picker x:Name="ddlTamanoContenedor" WidthRequest="150">
+        <Picker.Items>
+          <x:String>20 pies</x:String>
+          <x:String>40 pies</x:String>
+        </Picker.Items>
+      </Picker>
+    </StackLayout>
+    <StackLayout Orientation="Horizontal">
+      <Label Text="Estado"></Label>
+      <Picker x:Name="ddlEstadoContenedor" WidthRequest="150">
+        <Picker.Items>
+          <x:String>Vacío</x:String>
+          <x:String>Lleno</x:String>
+
+        </Picker.Items>
+      </Picker>
+
+    </StackLayout>
+    <Button Text="Agregar al inventario" Clicked="btnAgregar_Clicked"></Button>
+
+  </StackLayout>
+</ContentPage>

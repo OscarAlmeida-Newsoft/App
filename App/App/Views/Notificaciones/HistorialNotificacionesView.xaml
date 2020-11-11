@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App.Views.Notificaciones.HistorialNotificacionesView">
+  <StackLayout Spacing="20" Padding="20" VerticalOptions="Fill">
+  <ListView x:Name="lvNotificaciones" HasUnevenRows="true" SeparatorVisibility="Default" SeparatorColor="Black"  >
+    <ListView.ItemTemplate>
+      <DataTemplate>
+        <ViewCell>
+          
+          <StackLayout Orientation="Vertical">
+            <Grid BackgroundColor="#DBDBDB">
+              <Label Text="{Binding Titulo}" FontSize="15" FontAttributes="Bold" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"></Label>
+              <Label Text="{Binding Fecha}" FontSize="10" Grid.Row="0" Grid.Column="2" XAlign="End" HorizontalOptions="End" HorizontalTextAlignment="End"></Label>              
+            </Grid>
+            <Label Text="{Binding Contenido}" ></Label>
+            <Label></Label>
+            
+            
+          </StackLayout>
+        </ViewCell>
+        
+      </DataTemplate>
+    </ListView.ItemTemplate>
+  </ListView>
+  </StackLayout>
+</ContentPage>

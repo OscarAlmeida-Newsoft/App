@@ -1,0 +1,475 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>10.0</MinimumVisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4DB213E6-F0D6-4535-928C-2F07FC5DFA41}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>App</RootNamespace>
+    <AssemblyName>App</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Profile111</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="App.cs" />
+    <Compile Include="Behaviors\EmailValidator.cs" />
+    <Compile Include="Behaviors\MaxLengthValidator .cs" />
+    <Compile Include="Behaviors\NumberValidator.cs" />
+    <Compile Include="Behaviors\TextValidator.cs" />
+    <Compile Include="BLL\AppBLLBase.cs" />
+    <Compile Include="BLL\Comercial\EntregaBLL.cs" />
+    <Compile Include="BLL\Documentos\DocumentosBBL.cs" />
+    <Compile Include="BLL\IT\DatabaseBLL.cs" />
+    <Compile Include="BLL\IT\NotificacionBLL.cs" />
+    <Compile Include="BLL\IT\SincronizacionBLL.cs" />
+    <Compile Include="BLL\IT\Usuario.cs" />
+    <Compile Include="BLL\Operaciones\AgenciaBLL.cs" />
+    <Compile Include="BLL\Operaciones\AlmacenamientoBLL.cs" />
+    <Compile Include="BLL\Operaciones\CalificacionEventoLogisticoBLL.cs" />
+    <Compile Include="BLL\Operaciones\ReporteExtractoConductoreBLL.cs" />
+    <Compile Include="BLL\Operaciones\EventoLogisticoBLL.cs" />
+    <Compile Include="BLL\Operaciones\HistorialActivacionManifiestoBLL.cs" />
+    <Compile Include="BLL\Operaciones\SatelitalBLL.cs" />
+    <Compile Include="BLL\Operaciones\TransporteBLL.cs" />
+    <Compile Include="BLL\Seguridad\SeguridadBLL.cs" />
+    <Compile Include="BLL\Turnos\EnturnamientoBLL.cs" />
+    <Compile Include="Common\ParametrosSistema.cs" />
+    <Compile Include="Common\Util.cs" />
+    <Compile Include="Converters\ColorDiferenciaExtractoConverter.cs" />
+    <Compile Include="Converters\EstadoTurnoConverter.cs" />
+    <Compile Include="CustomCells\PendienteSincronizarCustomCell.cs" />
+    <Compile Include="CustomViewPDF\CustomWebView.cs" />
+    <Compile Include="DAO\AppDAOBase.cs" />
+    <Compile Include="DAO\Comercial\EntregaDAO.cs" />
+    <Compile Include="DAO\IT\DatabaseDAO.cs" />
+    <Compile Include="DAO\Operaciones\HistorialActivacionManifiestoDAO.cs" />
+    <Compile Include="DAO\Operaciones\AgenciaDAO.cs" />
+    <Compile Include="Entities\Almacenamiento\DetalleInventarioContenedor.cs" />
+    <Compile Include="Entities\Almacenamiento\InventarioContenedor.cs" />
+    <Compile Include="Entities\Comercial\DetalleEntrega.cs" />
+    <Compile Include="Entities\Comercial\Entrega.cs" />
+    <Compile Include="Entities\Comercial\EntregaDetalleFirma.cs" />
+    <Compile Include="Entities\EntidadApp.cs" />
+    <Compile Include="Entities\GPS\GPSInfo.cs" />
+    <Compile Include="Entities\GPS\LatLng.cs" />
+    <Compile Include="Entities\IT\BotonNotificacionAplicacionMovil.cs" />
+    <Compile Include="Entities\IT\CancelledMessage.cs" />
+    <Compile Include="Entities\IT\CodigoNotificacionAplicacionMovil.cs" />
+    <Compile Include="Entities\IT\ConfiguracionApp.cs" />
+    <Compile Include="Entities\IT\NotificacionAplicacionMovil.cs" />
+    <Compile Include="Entities\IT\RespuestaProceso.cs" />
+    <Compile Include="Entities\IT\RespuestaServicio.cs" />
+    <Compile Include="Entities\IT\StartLongRunningTaskMessage.cs" />
+    <Compile Include="Entities\IT\StopLongRunningTaskMessage .cs" />
+    <Compile Include="Entities\IT\TickedMessage .cs" />
+    <Compile Include="Entities\OpcionMenu.cs" />
+    <Compile Include="Entities\Operaciones\AdjuntoComentarioManifiesto.cs" />
+    <Compile Include="Entities\Operaciones\CalificacionEventoLogisticoManifiesto.cs" />
+    <Compile Include="Entities\Operaciones\CampoEventoLogistico.cs" />
+    <Compile Include="Entities\Operaciones\ComentarioManifiesto.cs" />
+    <Compile Include="Entities\Operaciones\HistorialActivacionManifiesto.cs" />
+    <Compile Include="Entities\Operaciones\ItemCampoEventoLogistico.cs" />
+    <Compile Include="Entities\Operaciones\JerarquiaTipoEventoLogistico.cs" />
+    <Compile Include="Entities\Operaciones\PosicionSatelitalVehiculo.cs" />
+    <Compile Include="Entities\Operaciones\Proveedor.cs" />
+    <Compile Include="Entities\Operaciones\PuestoControlManifiesto.cs" />
+    <Compile Include="Entities\Operaciones\RemesasPorNumeroEntrega.cs" />
+    <Compile Include="Entities\Operaciones\RemesasPorNumeroTransporte.cs" />
+    <Compile Include="Entities\Operaciones\ReporteExtractoConductor.cs" />
+    <Compile Include="Entities\Operaciones\RespuestaProcesoEventoLogistico.cs" />
+    <Compile Include="Entities\Operaciones\SubItemCampoEventoLogistico.cs" />
+    <Compile Include="Entities\Operaciones\TipoEventoLogistico.cs" />
+    <Compile Include="Entities\Operaciones\Transporte.cs" />
+    <Compile Include="Entities\Seguridad\PermisoAplicacion.cs" />
+    <Compile Include="Entities\Operaciones\Agencia.cs" />
+    <Compile Include="Entities\Turnos\CaracteristicaVehiculo.cs" />
+    <Compile Include="Entities\Turnos\Enturnamiento.cs" />
+    <Compile Include="Entities\Turnos\Vehiculo.cs" />
+    <Compile Include="Interfaces\IImageResizer.cs" />
+    <Compile Include="Interfaces\INetworkService.cs" />
+    <Compile Include="Interfaces\INotificationService.cs" />
+    <Compile Include="Interfaces\ISQLite.cs" />
+    <Compile Include="DAO\Operaciones\EventoLogisticoDAO.cs" />
+    <Compile Include="DataService\AppDataService.cs" />
+    <Compile Include="Entities\Operaciones\AdjuntoEventoLogistico.cs" />
+    <Compile Include="Entities\Operaciones\EventoLogistico.cs" />
+    <Compile Include="Entities\Seguridad\TokenSeguridad.cs" />
+    <Compile Include="Interfaces\ICredentialsService.cs" />
+    <Compile Include="Librerias\Onesignal\MiniJSON.cs" />
+    <Compile Include="Librerias\Onesignal\OneSignal - Copia.cs" />
+    <Compile Include="Librerias\Onesignal\OneSignal.cs" />
+    <Compile Include="Librerias\Onesignal\OneSignalPlatform.cs" />
+    <Compile Include="Views\Almacenamiento\AlmacenamientoHomeView.xaml.cs">
+      <DependentUpon>AlmacenamientoHomeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Almacenamiento\CrearInventarioContenedores.xaml.cs">
+      <DependentUpon>CrearInventarioContenedores.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Almacenamiento\InventarioContenedor.xaml.cs">
+      <DependentUpon>InventarioContenedor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Bodega\BodegaView.xaml.cs">
+      <DependentUpon>BodegaView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Bodega\RecepcionBodegaView.xaml.cs">
+      <DependentUpon>RecepcionBodegaView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CrearCuentaView.xaml.cs">
+      <DependentUpon>CrearCuentaView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ErrorView.xaml.cs">
+      <DependentUpon>ErrorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ExtractoConductores\ExtractoConductoresView.xaml.cs">
+      <DependentUpon>ExtractoConductoresView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\HomeView.xaml.cs">
+      <DependentUpon>HomeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LoginView.xaml.cs">
+      <DependentUpon>LoginView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\Logistica\CrearEventoView.xaml.cs">
+      <DependentUpon>CrearEventoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Logistica\DetalleEventoView.xaml.cs">
+      <DependentUpon>DetalleEventoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Logistica\FirmarEntrega.xaml.cs">
+      <DependentUpon>FirmarEntrega.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Logistica\HistorialCalifiacionViajesView.xaml.cs">
+      <DependentUpon>HistorialCalifiacionViajesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Logistica\HistorialEventosView.xaml.cs">
+      <DependentUpon>HistorialEventosView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Logistica\MenuEventosView.xaml.cs">
+      <DependentUpon>MenuEventosView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Logistica\RespuestaCrearEventoView.xaml.cs">
+      <DependentUpon>RespuestaCrearEventoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Notificaciones\HistorialNotificacionesView.xaml.cs">
+      <DependentUpon>HistorialNotificacionesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NovedadesView.xaml.cs">
+      <DependentUpon>NovedadesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Page1.xaml.cs">
+      <DependentUpon>Page1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Page2.cs" />
+    <Compile Include="Views\RecuperarPasswordView.xaml.cs">
+      <DependentUpon>RecuperarPasswordView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Sincronizacion\PendientesSincronizarView.xaml.cs">
+      <DependentUpon>PendientesSincronizarView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Logistica\LogisticaHomeView.xaml.cs">
+      <DependentUpon>LogisticaHomeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Turnos\DetalleTurnoView.xaml.cs">
+      <DependentUpon>DetalleTurnoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Turnos\TurnosView.xaml.cs">
+      <DependentUpon>TurnosView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Logistica\VerEntregaPDFCS.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Mobile.Core.v15.2">
+      <HintPath>..\..\Components\devexpress-grid-15.2.5.0\lib\pcl\DevExpress.Mobile.Core.v15.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Mobile.Grid.v15.2">
+      <HintPath>..\..\Components\devexpress-grid-15.2.5.0\lib\pcl\DevExpress.Mobile.Grid.v15.2.dll</HintPath>
+    </Reference>
+    <Reference Include="ExifLib, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\ExifLib.PCL.1.0.1\lib\portable-net45+sl50+win+WindowsPhoneApp81+wp80+Xamarin.iOS10+MonoAndroid10+MonoTouch10\ExifLib.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Java.Interop">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\MonoAndroid\v1.0\Java.Interop.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Android">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\MonoAndroid\v6.0\Mono.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.11.0.1\lib\portable-net45+win8+wp8+wpa81\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Plugin.Connectivity, Version=2.1.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xam.Plugin.Connectivity.2.1.2\lib\portable-net45+wp80+wp81+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+Xamarin.Mac20+UAP10\Plugin.Connectivity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Plugin.Connectivity.Abstractions, Version=2.1.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xam.Plugin.Connectivity.2.1.2\lib\portable-net45+wp80+wp81+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+Xamarin.Mac20+UAP10\Plugin.Connectivity.Abstractions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Plugin.Geolocator, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xam.Plugin.Geolocator.4.5.0.6\lib\netstandard1.0\Plugin.Geolocator.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Media, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xam.Plugin.Media.4.0.1.5\lib\netstandard1.0\Plugin.Media.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Permissions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Plugin.Permissions.3.0.0.12\lib\netstandard1.0\Plugin.Permissions.dll</HintPath>
+    </Reference>
+    <Reference Include="SignaturePad.Forms, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.Controls.SignaturePad.Forms.3.0.0\lib\netstandard1.0\SignaturePad.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLite-net, Version=1.6.292.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\sqlite-net-pcl.1.6.292\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\SQLite-net.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCL.raw, Version=0.9.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SQLitePCL.raw.0.9.2\lib\portable-net45+netcore45+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\SQLitePCL.raw.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.batteries_green, Version=1.1.13.388, Culture=neutral, PublicKeyToken=a84b7dcfb1391f7f, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SQLitePCLRaw.bundle_green.1.1.13\lib\portable-net45+netcore45+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\SQLitePCLRaw.batteries_green.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.batteries_v2, Version=1.1.13.388, Culture=neutral, PublicKeyToken=8226ea5df37bcae9, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SQLitePCLRaw.bundle_green.1.1.13\lib\portable-net45+netcore45+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\SQLitePCLRaw.batteries_v2.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.core, Version=1.1.13.388, Culture=neutral, PublicKeyToken=1488e028ca7ab535, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SQLitePCLRaw.core.1.1.13\lib\portable-net45+netcore45+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\SQLitePCLRaw.core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\netstandard1.1\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Core, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.Forms.2.5.0.280555\lib\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.Forms.2.5.0.280555\lib\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Xaml, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.Forms.2.5.0.280555\lib\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.Xaml.dll</HintPath>
+    </Reference>
+    <Reference Include="XLabs.Core, Version=2.0.5782.12218, Culture=neutral, PublicKeyToken=d65109b36e5040e4, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\XLabs.Core.2.0.5782\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1\XLabs.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="XLabs.Forms, Version=2.0.5782.12218, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\XLabs.Forms.2.0.5782\lib\portable-net45+netcore45+wpa81+wp8\XLabs.Forms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="XLabs.Ioc, Version=2.0.5782.12218, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\XLabs.IoC.2.0.5782\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1+Xamarin.iOS10\XLabs.Ioc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="XLabs.Platform, Version=2.0.5782.12218, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\XLabs.Platform.2.0.5782\lib\portable-net45+netcore45+wpa81+wp8\XLabs.Platform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="XLabs.Serialization, Version=2.0.5782.15703, Culture=neutral, PublicKeyToken=d65109b36e5040e4, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\XLabs.Serialization.2.0.5782\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1\XLabs.Serialization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GettingStarted.Xamarin" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\LoginView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Turnos\TurnosView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\HomeView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Logistica\CrearEventoView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Logistica\MenuEventosView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Logistica\LogisticaHomeView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\NovedadesView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Page1.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Sincronizacion\PendientesSincronizarView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Logistica\HistorialEventosView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\ErrorView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Logistica\DetalleEventoView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Notificaciones\HistorialNotificacionesView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Turnos\DetalleTurnoView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\RecuperarPasswordView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\CrearCuentaView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DAO\Operaciones\Almacenamiento\" />
+    <Folder Include="DAO\Turnos\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Versiones.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Logistica\RespuestaCrearEventoView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Logistica\HistorialCalifiacionViajesView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Almacenamiento\AlmacenamientoHomeView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Almacenamiento\CrearInventarioContenedores.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Almacenamiento\InventarioContenedor.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\ExtractoConductores\ExtractoConductoresView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Bodega\BodegaView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Bodega\RecepcionBodegaView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Logistica\FirmarEntrega.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <Import Project="..\..\packages\Xamarin.Forms.2.5.0.280555\build\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.5.0.280555\build\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\packages\Xamarin.Forms.2.5.0.280555\build\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Forms.2.5.0.280555\build\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App.Views.Logistica.HistorialEventosView"
+             xmlns:dxGrid="clr-namespace:DevExpress.Mobile.DataGrid;assembly=DevExpress.Mobile.Grid.v15.2">
+  <dxGrid:GridControl x:Name="grid" AutoGenerateColumnsMode="None" InitNewRow="grid_InitNewRow"  PopupMenuCustomization="OnPopupMenuCustomization">
+    <dxGrid:GridControl.Columns>
+      <!--<dxGrid:TextColumn FieldName="IdApp" Caption="Id" Width="15"/>-->
+      <dxGrid:TextColumn FieldName="NombreTipoEvento" Caption="Evento" />
+      <dxGrid:TextColumn FieldName="NumeroManifiesto" Caption="Manifiesto" IsReadOnly="True"/>
+      <dxGrid:TextColumn FieldName="FechaEvento" DisplayFormat="dd MMM HH:mm" Caption="Fecha"/>
+      <dxGrid:TextColumn FieldName="ErrorSincronizacion" IsVisible="false" />
+      <dxGrid:TextColumn FieldName="Estado" Caption="Estado" />
+      
+      
+      <!--<dxGrid:SwitchColumn FieldName="Sincronizado" />-->
+    </dxGrid:GridControl.Columns>
+  </dxGrid:GridControl>
+
+</ContentPage>

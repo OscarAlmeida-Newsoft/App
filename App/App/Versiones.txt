@@ -1,0 +1,54 @@
+﻿-------------------------------------------------------------
+03.05.2016  --  2.0.2 
+Salida en vivo con la nueva versión en xamarin
+
+-------------------------------------------------------------
+06.05.2016 -- 2.0.3
+* Scrollview en detalle evento
+* Tamaño de letra en el menueventos
+* Se reemplaza el logo para poner el amarillo
+* Se envía la versión utilizada por el usuario al momento de logueo
+--------------------------------------------------------------
+11.05.2016 -- 2.0.6
+* Corrección de errores en la creación de turnos
+--------------------------------------------------------------
+11.05.2016 -- 2.0.7
+* Se incluye módulo de logistica para terceros
+* Se cambia la forma como la aplicación detecta si tiene conectividad (Se usa un plugin)
+* Se incluye la opción de enviar fotos de la galería y de la cámara cuando se registra un evento logístico.
+----------------------------------------------------------------
+15.06.2016 -- 2.1.0
+* Escala de la imagenes
+* Muestra sólo las entregas pendientes por realizar el proceso de cargue o descargue
+* Muestra el mensaje de respuesta al guardar un evento logístico en una pantalla con colores.
+* Corrección de errores.
+---------------------------------------------------------------------
+12.07.2016 -- 2.1.2
+*Corrección errores
+* Historial viajes
+* Evento suspender viaje
+---------------------------------------------------------------------
+12.07.2016 -- 2.1.3
+*Corrección errores
+* Historial viajes
+* Evento suspender viaje
+------------------------------------------------------------------------
+21.07.2016 -- 2.1.4
+* Corrección errores
+* Evento reaunudar viaje
+----------------------------------------------------------------
+18.08.2016 -- 2.1.5
+* Evento devolución cotenedores
+* Ordenar eventos registrados offline por fecha antes de sincronizar
+----------------------------------------------------------------
+07.10.2016 -- 2.1.6
+* Extracto viaje conductores
+* Inventario contenedores
+
+----------------------------------------------------------------
+19.12.2016 -- 2.1.7
+* Se cambia modo de validación conexion a internet.
+
+
+
+

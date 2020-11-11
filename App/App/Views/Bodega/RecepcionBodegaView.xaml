@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App.Views.Bodega.RecepcionBodegaView"
+             Title="Recepción Bodega">
+
+  <StackLayout Spacing="20" Padding="20" VerticalOptions="Start">
+    
+    <StackLayout Orientation="Vertical"  VerticalOptions="FillAndExpand">
+      <StackLayout Orientation="Horizontal">
+        <!--<Label Text="Fecha Final: " FontSize="20" FontAttributes="Bold" />-->
+        <Entry x:Name="txtNumeroEntrega" Keyboard="Numeric" Placeholder="Número entrega"></Entry>
+      </StackLayout>
+    </StackLayout>
+    <StackLayout Orientation="Vertical"  VerticalOptions="FillAndExpand">
+      <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+        <Button x:Name="btnConsultarEntrega" Text="Consultar" Clicked="btnConsultarPorNumeroEntrega_Clicked"></Button>
+      </StackLayout>
+    </StackLayout>
+
+    <!--<ScrollView>-->
+    <StackLayout Spacing="20" Padding="0">
+      <ListView x:Name="lvEventosBodega" HasUnevenRows="true">
+        <ListView.ItemTemplate>
+          <DataTemplate>
+            <ViewCell>
+              <StackLayout Orientation="Vertical">
+                <StackLayout Orientation="Horizontal">
+                  <Label Text="Numero Remesa:" FontSize="20" FontAttributes="Bold" />
+                  <Label Text="{Binding NumeroEntrega}" FontSize="20"></Label>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                  <Label Text="Nombre Cliente:" FontSize="20" FontAttributes="Bold"/>
+                  <Label Text="{Binding NombreCliente}" FontSize="20"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                  <Label Text="Documento Cliente: " FontSize="17" FontAttributes="Bold"/>
+                  <Label Text="{Binding DocumentoCliente}" FontSize="20"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                  <Label Text="Placa: " FontSize="17" FontAttributes="Bold"/>
+                  <Label Text="{Binding PlacaVehiculo}" FontSize="20"/>
+                </StackLayout>
+              </StackLayout>
+            </ViewCell>
+          </DataTemplate>
+        </ListView.ItemTemplate>
+      </ListView>
+      <StackLayout Orientation="Vertical">
+        <Label Text="Observaciones: " FontSize="17" FontAttributes="Bold"/>
+        <Editor x:Name="txtObservaciones" Text="" VerticalOptions="FillAndExpand" Keyboard="Chat"  HeightRequest="150"></Editor>
+      </StackLayout>
+    </StackLayout>
+    <!--</ScrollView>-->
+    
+  </StackLayout>
+
+    <!--<Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />-->
+</ContentPage>

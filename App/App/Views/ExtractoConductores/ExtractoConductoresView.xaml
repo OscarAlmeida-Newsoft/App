@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App.Views.ExtractoCondductores.ExtractoConductoresView"
+             xmlns:local="clr-namespace:App.Converters;assembly=App">
+  
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <local:ColorDiferenciaExtractoConverter x:Key="colorDiferenciaExtractoConverter"/>
+    </ResourceDictionary>
+  </ContentPage.Resources>
+
+
+  <StackLayout Spacing="20" Padding="20" VerticalOptions="Start">
+    <StackLayout Orientation="Vertical"  VerticalOptions="FillAndExpand">
+      <StackLayout Orientation="Horizontal" >
+        <Label Text="Fecha Inicial: " FontSize="20" FontAttributes="Bold" />
+        <DatePicker x:Name="dtFechaInicial"></DatePicker>
+      </StackLayout>
+    </StackLayout>
+    <StackLayout Orientation="Vertical"  VerticalOptions="FillAndExpand">
+      <StackLayout Orientation="Horizontal">
+        <Label Text="Fecha Final: " FontSize="20" FontAttributes="Bold" />
+        <DatePicker x:Name="dtFechaFinal"></DatePicker>
+      </StackLayout>
+    </StackLayout>
+    <StackLayout Orientation="Vertical"  VerticalOptions="FillAndExpand">
+      <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+        <Button x:Name="btnConsultar"  Clicked="btnConsultarExtractoViajes_Clicked" Text="Consultar"></Button>
+      </StackLayout>
+    </StackLayout>
+     <!--<ScrollView>-->
+    <StackLayout Spacing="20" Padding="0">
+     
+      <ListView x:Name="lvExtractos" HasUnevenRows="true">
+        <ListView.ItemTemplate>
+          <DataTemplate>
+            <ViewCell>
+              <!--<ViewCell.View>-->
+              <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand">
+                <StackLayout Orientation="Horizontal" BackgroundColor="Gray">
+                  <Label Text="Manifiesto" FontSize="20" FontAttributes="Bold" />
+                  <Label Text="{Binding NumeroTransporte}" FontSize="20"></Label>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                  <Label Text="Fecha" FontSize="20" FontAttributes="Bold"/>
+                  <Label Text="{Binding FechaCreacion, StringFormat='{0:MMMM dd, yyyy}'}" FontSize="20"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                  <Label Text="Anulado? " FontSize="17" FontAttributes="Bold"/>
+                  <Label Text="{Binding Anulado}" FontSize="20"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                  <Label Text="Placa " FontSize="17" FontAttributes="Bold"/>
+                  <Label Text="{Binding Placa}" FontSize="20"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                  <Label Text="Ruta " FontSize="17" FontAttributes="Bold"/>
+                  <Label Text="{Binding Ruta}" FontSize="20"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                  <Label Text="Anticipo " FontSize="17" FontAttributes="Bold"/>
+                  <Label Text="{Binding Anticipo}" FontSize="20"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                  <Label Text="Reanticipo " FontSize="17" FontAttributes="Bold"/>
+                  <Label Text="{Binding ReAnticipo}" FontSize="20"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                  <Label Text="L1 Descontado " FontSize="17" FontAttributes="Bold"/>
+                  <Label Text="{Binding L1Descontado}" FontSize="20"/>
+                </StackLayout>
+                <!--<StackLayout Orientation="Horizontal">
+                  <Label Text="Transportes Asignación " FontSize="17" FontAttributes="Bold"/>
+                  <Label Text="{Binding TransportesAsignacion}" FontSize="20"/>
+                </StackLayout>-->
+                <StackLayout Orientation="Horizontal">
+                  <Label Text="Total por Legalizar " FontSize="17" FontAttributes="Bold"/>
+                  <Label Text="{Binding TotalporLegalizar}" FontSize="20"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                  <Label Text="Total Legalizado " FontSize="17" FontAttributes="Bold"/>
+                  <Label Text="{Binding TotalLegalizado}" FontSize="20"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                  <Label Text="Diferencia " FontSize="17" FontAttributes="Bold"/>
+                  <Label Text="{Binding Diferencia}"  BackgroundColor="{Binding Diferencia, Converter={StaticResource colorDiferenciaExtractoConverter}}" FontSize="20"/>
+                </StackLayout>
+              </StackLayout>
+            
+              <!--</ViewCell.View>-->  
+            </ViewCell>
+          </DataTemplate>
+        </ListView.ItemTemplate>
+      </ListView>
+     
+    </StackLayout>
+     <!--</ScrollView>-->
+  </StackLayout>
+
+</ContentPage>

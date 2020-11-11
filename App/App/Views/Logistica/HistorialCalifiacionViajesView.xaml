@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App.Views.Logistica.HistorialCalifiacionViajesView">
+ 
+  <StackLayout Spacing="20" Padding="20" VerticalOptions="Start">
+    <StackLayout Orientation="Vertical"  VerticalOptions="FillAndExpand">
+      <StackLayout Orientation="Horizontal" >
+        <Label Text="Fecha Inicial: " FontSize="20" FontAttributes="Bold" />        
+        <DatePicker x:Name="dtFechaInicial"></DatePicker>
+      </StackLayout>
+    </StackLayout>
+    <StackLayout Orientation="Vertical"  VerticalOptions="FillAndExpand">
+      <StackLayout Orientation="Horizontal">
+        <Label Text="Fecha Final: " FontSize="20" FontAttributes="Bold" />   
+        <DatePicker x:Name="dtFechaFinal"></DatePicker>
+      </StackLayout>
+    </StackLayout>
+    <StackLayout Orientation="Vertical"  VerticalOptions="FillAndExpand">
+      <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+        <Button x:Name="btnConsultar"  Clicked="btnConsultarHistorialCalificacionViajes_Clicked" Text="Consultar"></Button>
+      </StackLayout>
+    </StackLayout>      
+    
+  <!--<ScrollView>-->
+    <StackLayout Spacing="20" Padding="0">
+      <ListView x:Name="lvCalificaciones" HasUnevenRows="true">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <StackLayout Orientation="Vertical">
+              <StackLayout Orientation="Horizontal">
+                <Label Text="Manifiesto" FontSize="20" FontAttributes="Bold" />
+                <Label Text="{Binding NumeroManifiesto}" FontSize="20"></Label>                
+              </StackLayout>            
+              <StackLayout Orientation="Horizontal">
+                <Label Text="Fecha" FontSize="20" FontAttributes="Bold"/>
+                <Label Text="{Binding FechaCalificacion}" FontSize="20"/>
+              </StackLayout>
+              <StackLayout Orientation="Horizontal">
+                <Label Text="Calificación: " FontSize="17" FontAttributes="Bold"/>
+                <Label Text="{Binding CalificacionAutomatica}" FontSize="20"/>                
+              </StackLayout>             
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Observación: " FontSize="17" FontAttributes="Bold"/>
+                <Label Text="{Binding ObservacionCalificacionAutomatica}" FontSize="20"/>
+            </StackLayout>
+            </StackLayout>
+          </ViewCell>          
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+    </StackLayout>
+  <!--</ScrollView>-->
+  </StackLayout>
+   
+  
+</ContentPage>
+

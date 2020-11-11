@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App.Views.LoginView"
+             Title="Ingresar">
+  <StackLayout Spacing="20" Padding="20"
+                        VerticalOptions="Center">
+    <Entry Placeholder="Nombre usuario"
+           x:Name="txtUsuario"/>
+    <Entry Placeholder="Contraseña"
+           x:Name="txtPassword"
+           IsPassword="true"/>
+    <Label x:Name="lblEstado"></Label>
+    <Button Text="Ingresar" Clicked="btnIngresarClicked" x:Name="btnLogin"/>
+    <Button Text="Crear cuenta" Clicked="btnCrearCuentaClicked"/>
+    <Button Text="Recuperar clave" Clicked="btnRecuperarClaveClicked"/>
+    <Label x:Name="lblVersion" HorizontalOptions="Center"></Label>
+  </StackLayout>
+</ContentPage>

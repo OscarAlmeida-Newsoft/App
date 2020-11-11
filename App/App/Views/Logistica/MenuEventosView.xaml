@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App.Views.Logistica.MenuEventosView">
+
+  <StackLayout Spacing="20" Padding="0" >
+    <!--<ActivityIndicator x:Name="activityIndicator"  />-->
+    <StackLayout Orientation="Horizontal">
+      <Label FontSize="15">Transporte</Label>
+      <Label x:Name="lblNumeroViajeActivo" FontSize="15">--</Label>
+
+            <!--<Label Text="Ver Documentos"
+            HorizontalOptions="Center">
+
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer
+                Tapped="btnVerDocumentos_Clicked"
+                    NumberOfTapsRequired="2" />
+                </Label.GestureRecognizers>
+            </Label>-->
+            <StackLayout Orientation="Horizontal" Padding="0,0,0,0" Spacing="0">
+                <Button x:Name="btnVerDocumentos" Text="Ver Documentos" Clicked="btnVerDocumentos_Clicked" 
+                    HeightRequest="28" FontSize="9"></Button>
+            </StackLayout>
+            
+            
+    </StackLayout>
+    
+    <StackLayout Orientation="Horizontal">
+      <Label FontSize="15">Ruta</Label>
+      <Label x:Name="lblRuta" FontSize="15">--</Label>
+    </StackLayout>
+    <BoxView Color="#E6007E" WidthRequest="100" HeightRequest="2"></BoxView>
+    <Label HorizontalOptions="Center">Eventos para reportar</Label>
+    <ListView x:Name="lvMenuEventos" ItemSelected="OnSelectionEvento" >
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+              <BoxView Color="Gray" HeightRequest="5" WidthRequest="5" VerticalOptions="Center"></BoxView>
+              <Label Text="{Binding NombreEvento}" TextColor="Black" FontSize="15" VerticalOptions="Center">  </Label>
+            </StackLayout>
+          </ViewCell>
+          
+        </DataTemplate>
+      </ListView.ItemTemplate>
+
+    </ListView>
+    
+    <Button Text="Historial eventos" Clicked="btnHistorialEventos_Clicked"></Button>   
+    
+  </StackLayout>
+  
+  
+</ContentPage>

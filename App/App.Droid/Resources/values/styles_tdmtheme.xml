@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Generated with http://android-holo-colors.com -->
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+  <style name="EditTextTdmTheme" parent="android:Widget.EditText">
+	  <item name="android:background">@drawable/tdmtheme_edit_text_holo_light</item>
+    <!--<item name="android:background">#777</item>-->
+    <item name="android:textColor">#000</item>
+  </style>
+
+  <style name="AutoCompleteTextViewTdmTheme" parent="android:Widget.AutoCompleteTextView">
+      <item name="android:dropDownSelector">@drawable/tdmtheme_list_selector_holo_light</item>
+	  <item name="android:background">@drawable/tdmtheme_edit_text_holo_light</item>
+	  <item name="android:textColor">#000000</item>
+  </style>
+
+  <style name="CheckBoxTdmTheme" parent="android:Widget.CompoundButton.CheckBox">
+      <item name="android:button">@drawable/tdmtheme_btn_check_holo_light</item>
+  </style>
+
+  <style name="RadioButtonTdmTheme" parent="android:Widget.CompoundButton.RadioButton">
+      <item name="android:button">@drawable/tdmtheme_btn_radio_holo_light</item>
+  </style>
+
+  <style name="ButtonTdmTheme" parent="android:Widget.Button">
+	  <item name="android:background">@drawable/tdmtheme_btn_default_holo_light</item>
+	  <item name="android:minHeight">48dip</item>
+	  <item name="android:minWidth">64dip</item>
+
+    <!--color de texto de los botones -->
+	  <item name="android:textColor">#fff</item>
+  </style>
+
+  <style name="ImageButtonTdmTheme" parent="android:Widget.ImageButton">
+	  <item name="android:background">@drawable/tdmtheme_btn_default_holo_light</item>
+  </style>
+
+  <style name="SpinnerTdmTheme" parent="android:Widget.Spinner">
+      <item name="android:background">@drawable/tdmtheme_spinner_background_holo_light</item>
+      <item name="android:dropDownSelector">@drawable/tdmtheme_list_selector_holo_light</item>
+  </style>
+
+  <style name="SpinnerDropDownItemTdmTheme" parent="android:Widget.DropDownItem.Spinner">
+      <item name="android:checkMark">@drawable/tdmtheme_btn_radio_holo_light</item>
+  </style>
+  <style name="TabTdmTheme">
+      <item name="android:gravity">center_horizontal</item>
+      <item name="android:paddingLeft">16dip</item>
+      <item name="android:paddingRight">16dip</item>
+      <item name="android:background">@drawable/tdmtheme_tab_indicator_holo</item>
+      <item name="android:layout_width">0dip</item>
+      <item name="android:layout_weight">1</item>
+      <item name="android:minWidth">80dip</item>
+  </style>
+
+  <style name="TabTextTdmTheme">
+	  <item name="android:textColor">#000000</item>
+      <item name="android:textSize">12sp</item>
+      <item name="android:textStyle">bold</item>
+      <!-- v14 <item name="android:textAllCaps">true</item> -->
+      <item name="android:ellipsize">marquee</item>
+      <item name="android:maxLines">2</item>
+      <item name="android:maxWidth">180dip</item>
+  </style>
+
+  <style name="ProgressBarTdmTheme" parent="android:Widget.ProgressBar.Horizontal">
+      <item name="android:progressDrawable">@drawable/tdmtheme_progress_horizontal_holo_light</item>
+      <item name="android:indeterminateDrawable">@drawable/tdmtheme_progress_indeterminate_horizontal_holo_light</item>
+      <item name="android:minHeight">16dip</item>
+      <item name="android:maxHeight">16dip</item>
+  </style>
+
+  <style name="SeekBarTdmTheme" parent="android:Widget.SeekBar">
+      <item name="android:progressDrawable">@drawable/tdmtheme_scrubber_progress_horizontal_holo_light</item>
+      <item name="android:indeterminateDrawable">@drawable/tdmtheme_scrubber_progress_horizontal_holo_light</item>
+      <item name="android:minHeight">13dip</item>
+      <item name="android:maxHeight">13dip</item>
+      <item name="android:thumb">@drawable/tdmtheme_scrubber_control_selector_holo_light</item>
+      <item name="android:thumbOffset">16dip</item>
+      <item name="android:paddingLeft">16dip</item>
+      <item name="android:paddingRight">16dip</item>
+  </style>
+
+  <style name="RatingBarTdmTheme" parent="android:Widget.RatingBar">
+      <item name="android:progressDrawable">@drawable/tdmtheme_ratingbar_full_holo_light</item>
+      <item name="android:indeterminateDrawable">@drawable/tdmtheme_ratingbar_full_holo_light</item>
+  </style>
+
+  <style name="RatingBarBigTdmTheme" parent="android:Widget.RatingBar">
+      <item name="android:progressDrawable">@drawable/tdmtheme_ratingbar_holo_light</item>
+      <item name="android:indeterminateDrawable">@drawable/tdmtheme_ratingbar_holo_light</item>
+      <item name="android:minHeight">35dip</item>
+      <item name="android:maxHeight">35dip</item>
+  </style>
+
+  <style name="RatingBarSmallTdmTheme" parent="android:Widget.RatingBar">
+      <item name="android:progressDrawable">@drawable/tdmtheme_ratingbar_small_holo_light</item>
+      <item name="android:indeterminateDrawable">@drawable/tdmtheme_ratingbar_small_holo_light</item>
+      <item name="android:minHeight">16dip</item>
+      <item name="android:maxHeight">16dip</item>
+  </style>
+
+  <style name="ToggleTdmTheme" parent="android:Widget.Button.Toggle">
+      <item name="android:background">@drawable/tdmtheme_btn_toggle_holo_light</item>
+      <item name="android:minHeight">48dip</item>
+	  <item name="android:textColor">#000000</item>
+  </style>
+
+  <style name="ListViewTdmTheme" parent="android:Widget.ListView">
+      <item name="android:listSelector">@drawable/tdmtheme_list_selector_holo_light</item>
+    <!--<item name="android:textAppearanceListItem">@style/TextAppearance.Large</item>
+    <item name="android:textAppearanceListItemSmall">@style/TextAppearance.Large</item>
+    <item name="android:textAppearanceListItemSecondary">@style/TextAppearance.Large</item>-->
+    
+    
+  </style>
+
+  <style name="ListViewTdmTheme.White" parent="android:Widget.ListView.White">
+      <item name="android:listSelector">@drawable/tdmtheme_list_selector_holo_light</item>
+    <!--<item name="android:textAppearanceListItem">@style/TextAppearance.Large</item>
+    <item name="android:textAppearanceListItemSmall">@style/TextAppearance.Large</item>
+    <item name="android:textAppearanceListItemSecondary">@style/TextAppearance.Large</item>-->
+    
+  <item name="android:textColor">#FF0000</item>
+    <item name="android:typeface">sans</item>
+  </style>
+
+  <style name="SpinnerItemTdmTheme" parent="android:TextAppearance.Widget.TextView.SpinnerItem">
+      <item name="android:textColor">#000</item>
+  </style>
+  
+  <style name="ActionBarStyleTdmTheme" parent="@android:style/Widget.Holo.Light.ActionBar">
+    
+    <item name="android:titleTextStyle">@style/TdmTheme.ActionBar.TitleTextStyle</item>
+    <!--Color de la barra principal-->
+    <item name="android:background">#1A2338</item>
+    <!--@color/primary_dark-->
+  </style>
+  <style name="TdmTheme.ActionBar.TitleTextStyle" parent="@android:style/TextAppearance.Holo.Widget.ActionBar.Title">
+    <!--color letra barra principal-->
+    <item name="android:textColor">@android:color/white</item>
+  </style>
+
+  <style name="TextAppearance.Large" parent="">
+    <item name="android:textSize">22sp</item>
+    <item name="android:textColor">#FF0000</item>
+    <item name="android:typeface">sans</item>
+  </style>
+
+</resources>

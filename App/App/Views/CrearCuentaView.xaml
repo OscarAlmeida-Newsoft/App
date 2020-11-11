@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App.Views.CrearCuentaView">
+  <StackLayout Spacing="20" Padding="20"
+                        VerticalOptions="Center">
+    <Picker x:Name="pickerGenero" Title="Género"></Picker>
+
+    
+    <Entry Placeholder="Nombre completo"           x:Name="txtNombre"/>
+    
+    <Picker x:Name="tipoIdentificacionPicker" IsEnabled="False" IsVisible="false" Title="Tipo Identificación">
+      <Picker.Items>
+        <x:String>Cédula</x:String>
+        <x:String></x:String>
+      </Picker.Items>
+    </Picker>
+    
+    <Entry Placeholder="Número identificación" x:Name="txtNumeroIdentificacion" Keyboard="Numeric"/>
+
+    <Entry Placeholder="Correo electrónico" x:Name="txtCorreoElectronico" Keyboard="Email"/>
+    
+    <Entry Placeholder="Número celular" x:Name="txtCelular" Keyboard="Numeric"/>
+    
+    <Entry Placeholder="Contraseña"           x:Name="txtPassword"           IsPassword="true"/>
+
+    <Entry Placeholder="Repita contraseña"           x:Name="txtPassword2"           IsPassword="true"/>
+
+
+    <Button Text="Registrar" Clicked="btnRegistrarClicked" x:Name="btnRegistrar"/>
+    <Button Text="Cancelar registro" Clicked="btnCancelarClicked"/>
+    
+  </StackLayout>
+</ContentPage>

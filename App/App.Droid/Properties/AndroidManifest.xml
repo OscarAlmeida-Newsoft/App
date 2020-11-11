@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.tdm" android:versionCode="2266" android:installLocation="internalOnly" android:versionName="2.2.6.6">
+	<uses-sdk android:minSdkVersion="15" android:targetSdkVersion="28" />
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.CAMERA" />
+	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	<!--<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />-->
+	<!--Onesignal permissions-->
+	<permission android:name="com.tdm.permission.C2D_MESSAGE" android:protectionLevel="signature" />
+	<uses-permission android:name="com.tdm.permission.C2D_MESSAGE" />
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.REQUEST_COMPANION_RUN_IN_BACKGROUND" />
+	<uses-permission android:name="android.permission.REQUEST_COMPANION_USE_DATA_IN_BACKGROUND" />
+	<uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+	<uses-permission android:name="android.permission.ACCEPT_HANDOVER" />
+	<application android:theme="@style/TdmTheme" android:label="TDM App" android:icon="@drawable/icon">
+		<meta-data android:name="onesignal_app_id" android:value="7f52e414-fe91-11e4-af42-5f8f38f9da7b" />
+		<meta-data android:name="onesignal_google_project_number" android:value="str:44082953097" />
+		<receiver android:name="com.onesignal.GcmBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+			<intent-filter>
+				<action android:name="com.google.android.c2dm.intent.RECEIVE" />
+				<category android:name="com.tdm" />
+			</intent-filter>
+		</receiver>
+		<!--<receiver android:name="com.onesignal.NotificationOpenedReceiver" />
+    <service android:name="com.onesignal.GcmIntentService" />
+    <service android:name="com.onesignal.SyncService" android:stopWithTask="false" />
+    <activity android:name="com.onesignal.PermissionsActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar" />-->
+		<provider android:name="android.support.v4.content.FileProvider" android:authorities="com.tdm.fileprovider" android:exported="false" android:grantUriPermissions="true">
+			<meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/file_paths"></meta-data>
+		</provider>
+	</application>
+	<!--<application android:name="android.support.multidex.MultiDexApplication"></application>-->
+</manifest>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
+             x:Class="App.Views.Turnos.DetalleTurnoView"
+             Title="Datos Turno">
+  <ScrollView>
+  <StackLayout Spacing="20" Padding="20" VerticalOptions="Start" x:Name="layout">
+    <Label Text="Deseo enturnarme en"></Label>
+    <StackLayout x:Name="puestoExpedicion"></StackLayout>
+    <Label Text="Placa"></Label>
+    <Entry x:Name="txtPlacaCabezote"></Entry>
+    <StackLayout x:Name="placaCabezote"></StackLayout>
+    <Label Text="Trailer"></Label>
+    <Entry x:Name="txtPlacaTrailer"></Entry>
+    <Label Text="Tipo Trailer"></Label>
+    <Label x:Name="lblTipoTrailer"></Label>
+    <controls:BindableRadioGroup x:Name="rbTipoTRailer" Orientation="Horizontal" IsVisible="false">     
+    </controls:BindableRadioGroup>
+    <Label Text="Conductor"></Label>
+    <Entry x:Name="txtCedulaConductor"></Entry>
+    <StackLayout x:Name="layoutConductor"></StackLayout>
+    <Label Text="Deseo Viajar a"></Label>
+    <StackLayout x:Name="destino"></StackLayout>
+    <controls:CheckBox x:Name="cbDisponible" DefaultText="Estoy disponible para cargar"></controls:CheckBox>
+    <StackLayout x:Name="disponible"></StackLayout>
+    <StackLayout x:Name="layoutBotones"></StackLayout>
+  </StackLayout>
+  </ScrollView>
+</ContentPage>

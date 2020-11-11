@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App.Views.Almacenamiento.CrearInventarioContenedores"
+             xmlns:behavior="clr-namespace:App.Behaviors;assembly=App"
+             xmlns:fab="clr-namespace:FAB.Forms;assembly=FAB.Forms">
+  <StackLayout Spacing="20" Padding="20" VerticalOptions="Start" x:Name="panel">
+    <StackLayout Orientation="Horizontal">
+      <Button x:Name="btnNuevoInventario" Text="Nuevo" Clicked="btnNuevoInventario_Clicked"></Button>
+      <Button x:Name="btnEnviarInventario" Text="Enviar" Clicked="btnEnviarInventario_Clicked"></Button>
+    </StackLayout>
+
+    <StackLayout Orientation="Horizontal">
+      <Label Text="Fecha"></Label>
+      <Label x:Name="lblFechaInventario"></Label>
+    </StackLayout>
+    <StackLayout Orientation="Horizontal">
+      <Label Text="Puesto"></Label>
+      <Picker x:Name="ddlPuesto" WidthRequest="150" SelectedIndexChanged="ddlPuesto_SelectedIndexChanged">
+        <Picker.Items>
+          <x:String>Bogotá</x:String>
+          <x:String>Buenaventura</x:String>
+          <x:String>Cali</x:String>
+          <x:String>Cartagena</x:String>          
+          <x:String>Girardota</x:String>
+        </Picker.Items>
+      </Picker>
+      
+    </StackLayout>
+    <Label Text="Items del inventario"></Label>
+    <StackLayout Orientation="Horizontal">
+      <Button x:Name="btnAgregarItem" Text="Agregar item" Clicked="btnAgregarItem_Clicked" IsEnabled="false"></Button>
+      
+      
+    </StackLayout>
+    
+    
+    
+    
+    <ListView x:Name="lvInventario" HasUnevenRows="true" >
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <StackLayout Orientation="Vertical">
+              <StackLayout Orientation="Horizontal">
+                <Label Text="Contenedor" FontAttributes="Bold" />
+                <Label Text="{Binding NumeroContenedor}"></Label>                
+              </StackLayout>            
+              <!--<StackLayout Orientation="Horizontal">
+                <Label Text="Fecha" FontSize="20" FontAttributes="Bold"/>
+                <Label Text="{Binding FechaCalificacion}" FontSize="20"/>
+              </StackLayout>
+              <StackLayout Orientation="Horizontal">
+                <Label Text="Calificación: " FontSize="17" FontAttributes="Bold"/>
+                <Label Text="{Binding CalificacionAutomatica}" FontSize="20"/>                
+              </StackLayout>             
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Observación: " FontSize="17" FontAttributes="Bold"/>
+                <Label Text="{Binding ObservacionCalificacionAutomatica}" FontSize="20"/>
+            </StackLayout>-->
+            </StackLayout>
+          </ViewCell>          
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+    
+  
+    
+  </StackLayout>
+</ContentPage>
